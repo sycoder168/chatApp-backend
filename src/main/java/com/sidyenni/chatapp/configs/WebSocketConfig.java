@@ -1,4 +1,4 @@
-package com.sidyenni.chatapp;
+package com.sidyenni.chatapp.configs;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
@@ -16,6 +16,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/topic"); // Enables a simple in-memory broker
-        registry.setApplicationDestinationPrefixes("/app");    }
+        registry.enableSimpleBroker("/user"); // Enables a simple in-memory broker
+        registry.setApplicationDestinationPrefixes("/app");
+        registry.setUserDestinationPrefix("/user");
+    }
 }
